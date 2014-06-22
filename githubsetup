@@ -1,0 +1,40 @@
+SetUp of git
+
+1.Now that you have Git installed, it's time to configure your settings. To do this you need to open an app called Terminal.
+
+2.First, tell Git your name so your commits will be properly labeled.
+
+	git config --global user.name "Your Name Here"
+	# Sets the default name for Git to use when you commit
+
+3.Git saves your email address into the commits you make. We use the email address to associate your commits with your GitHub account.
+
+	git config --global user.email "your_email@example.com"
+	# Sets the default email for git to use when you commit
+
+4.The last option you set will tell Git that you don't want to type your username and password every time your computer talks to GitHub.
+
+Tips:
+
+    You need Git 1.7.10 or newer to use the credential helper.
+    The credential helper only works when you clone a GitHub repository using an HTTPS URL. If you clone GitHub repositories using SSH, then you authenticate using SSH keys instead of a username and password. For help setting up an SSH connection, see Generating SSH Keys.
+
+To use this option, you need to turn on the credential helper so that Git will save your password in memory for some time:
+
+git config --global credential.helper cache
+# Set git to use the credential memory cache
+
+By default Git will cache your password for 15 minutes. You can change this if you like.
+
+git config --global credential.helper 'cache --timeout=3600'
+# Set the cache to timeout after 1 hour (setting is in seconds)
+
+
+Setting Up repositories:
+
+1.To initialize a Git repository here, type the following command: git init
+
+2.let's type the git status command to see what the current state of our project is:git status
+
+3.That means Git sees that githubsetup is a new file.
+To tell Git to start tracking changes made to octocat.txt, we first need to add it to the staging area by using:git add.
