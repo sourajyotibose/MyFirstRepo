@@ -1,0 +1,47 @@
+who am i--shows the user of the shell.
+cal--shows calender.
+date--show date.
+touch--Creates new empty text files.
+cat-- Creates new file.But simply using cat "filename" is erroroneous.So we use it as cat > "filename" and then we enter data and save it using cntrl+d.If we type cat < "filename" then we take input from the file stated.
+To merge 2 files we use cat as cat filename1 filename2 > filename3,where filename1 filename2 must exist.
+mv--used to rename command . mv filename1 filename2.Filename1 is renamed as filename2.
+rm--1.used to rename directories. rm filename1 filename2.
+    2.used to delete existing directories. rm -r directory1. r is the mode to give it the right to remove a directory using rm.Without rm it will not work. we can also use "rmdir"
+cp--used to copy the file from one location to another.cp filename directory.
+links are of the soft and hard kind.
+ln--create links between two files.If the file does not exist.The files are created.So when ever we type in one file the other file is also updated.ln filename1 filename2. It creates a hard link.
+To create soft link lm -s filename1 filename2.dilename1 must exist.filename2 is a pointer to the original file.If we remove the hard link then the soft link does not work.
+File Permission-Read,write and execute has values.read has value 4.write 2 and execute 1.So file at best can have at most 7.
+umask-- is a system variable.It subtracts from 0666 and 0777.So it decides which file is allowed to read and write.
+ls--list all documents.However ls -l(shows the permissions for the file) shows us the files and the blocks taken.dr indicates directory and -r shows the files.
+To make a hidden file we make a file and name it as .new or ls -a(a indicates show all files even the hidden ones).
+to see hidden files cntrl+h.
+chmod--has 3 modes 1)777 used to give permission for read,write and execute to the file user.2)555 for read and execute. 3)666 for read and write.
+
+uname--gives us the version of the kernel of the machine and all the information of the system.\\
+file--file * lists all files and what kind of file we have and it states what kind of file(i.e ASCII or text).\\
+wc--counts the number of lines,words and characters in the file.\\
+So too see the number of lines use wc -l filename\\
+		number of words use wc -w filename\\
+		number of characters wc -c -eq 2 the -eq 2 is used so that the terminal and carriage return is not counted\\
+sort--sorts the contents of the file alphabetically.sort filename\\
+cut--used to filter text.It uses tab as the delimter.But if delimiter changes then then we can use -d " " to state delimiter inside the quotes.And then we state the field that we want from the file.\\
+dd--It is used for conversion of the text file from uppercase to lowercase.dd if=filename1 out=filename2 conv=ucase\\
+dd also allows us to format a floppy drive and disk drive.We can extract from iso and we install an os using dd also.We can convert ASCII to european i.e change the character encoding using dd if=filename1 of=filename2 conv=ebcdic\\
+man--command repository.tells us about any command.used like man "command"\\
+compress--to reduce the size of a file.used as compress -v filename.So the filename is replaced with filename.z.Now cat does not work for it.So we use zcat filename.z to show the contents of the file compressed.To uncompress file we uncompress.\\
+set--required for setting to $ or variable arguments and is known as "positional parameter".\\
+Anything between ` ` is called the accent graves.\\
+$#--shows the number of positional parameters.\\
+expr-- used for arithmatic operation .It only uses integers.For float we use bc by piping e.g `echo $a + $b | bc`\\
+to print something in bold use \033[1m before the statement and \033[0m to undo bold after necessary\\
+$?--tells us if a command is executed succesfully or not\\
+-lt--less than ,[ $ -lt $ ] space after [ and before ]is most impotant.\\
+-gt--greater than, same as above\\
+-eq--equal, "\\
+-ne--not equal, "\\
+To check for files we use [ -f $filename ].The - is to make sure that the size of the file is not zero.
+To append to a file use cat >> filename
+-a--is used for &&
+grep--used to search string patterns.It is the gradual regular expression search.grep -i -n -c -v pattern filename. -i makes the search non-case -sensitive.-n is used to show the lines that have the keyword.-c shows the number of lines that have the number.-v shows the line that does not have the pattern.-o checks for every word and counts it.
+awk--Gnu version of awk is gawk
